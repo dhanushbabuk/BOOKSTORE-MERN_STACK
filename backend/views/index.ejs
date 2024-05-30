@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book List</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Style for the card container */
+      * {
+        font-family: Calibri, "Trebuchet MS", sans-serif;
+        font-weight: 800;
+        font-size: xx-large;
+      }
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      /* Style for the book details */
+      .book-info {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      /* Style for icon buttons */
+      .icon-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #007bff;
+        margin-right: 5px;
+        margin-top: 8px;
+      }
+      .delete {
+        color: red;
+      }
+      .edit {
+        color: rgba(183, 119, 7, 0.52);
+      }
+      h1 {
+        font-size: larger;
+
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+      }
+      .add-button {
+        text-align: right;
+        margin-right: 20px;
+      }
+      .add {
+        font-family: Calibri, "Trebuchet MS", sans-serif;
+      }
+      .button {
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 5px;
+        margin-top: 8px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: gray;
+        color: white;
+        border: none;
+      }
+
+      .centered-text {
+        text-align: center;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/books">
+      <button>Back to Home</button>
+    </a>
+    <h1>Welcome To Book Store</h1>
+    <h1>Books List</h1>
+    <!-- Add button -->
+
+    <div class="add-button">
+      <a href="/add">
+        <button title="Add" class="button">
+          <i class="fas fa-plus-circle"> <span>New Book</span></i>
+        </button>
+      </a>
+    </div>
+
+    <% if (books.length === 0) { %>
+    <div class="centered-text">
+      <span>ADD BOOKS TO THE LIST</span>
+    </div>
+    <% } %>
+
+    <!-- books loading  -->
+
+    <% books.forEach(book => { %>
+    <div class="card">
+      <div class="book-info">Title: <%= book.title %></div>
+      <div class="book-info">Author: <%= book.author %></div>
+      <div class="book-info">Published: <%= book.publishYear %></div>
+
+      <!-- Redirect to book details -->
+      <a href="/book/<%= book._id %>">
+        <button class="icon-button" title="Info">
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </a>
+
+      <!-- Other buttons for Edit and Delete -->
+      <a href="/book/<%=book._id%>/update">
+        <button class="icon-button edit" title="Edit">
+          <i class="fas fa-edit"></i></button
+      ></a>
+      <a href="/book/<%=book._id%>/delete">
+        <button class="icon-button delete" title="Delete">
+          <i class="fas fa-trash-alt"></i></button
+      ></a>
+    </div>
+    <% }); %>
+  </body>
+</html>

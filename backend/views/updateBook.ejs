@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Book</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/script.js"></script>
+  <body>
+    <a href="/books">
+      <button>Back to Home</button>
+    </a>
+    <h1>Edit Book</h1>
+    <form action="/book/<%= book._id %>/update" method="POST">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="<%= book.title %>"
+      /><br />
+
+      <label for="author">Author:</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        value="<%= book.author %>"
+      /><br />
+
+      <label for="publishYear">Publish Year:</label>
+      <input
+        type="number"
+        id="publishYear"
+        name="publishYear"
+        value="<%= book.publishYear %>"
+      /><br />
+
+      <button type="submit" onclick="showSuccessAlertForUpdating()">
+        Update
+      </button>
+    </form>
+  </body>
+</html>

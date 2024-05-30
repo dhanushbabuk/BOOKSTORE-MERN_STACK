@@ -1,0 +1,29 @@
+<!-- addBook.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add New Book</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/script.js"></script>
+  </head>
+  <body>
+    <a href="/books">
+      <button>Back to Home</button>
+    </a>
+    <h1>Add New Book</h1>
+    <form action="/add" method="post">
+      <label for="title">Title:</label>
+      <input type="text" name="title" /><br /><br />
+
+      <label for="author">Author:</label>
+      <input type="text" name="author" /><br /><br />
+
+      <label for="publishYear">Publish Year:</label>
+      <input type="number" name="publishYear" /><br /><br />
+
+      <input type="submit" value="Add Book" onclick="showSuccessAlertForAdding()"/>
+    </form>
+   
+  </body>
+  </body>
+</html>

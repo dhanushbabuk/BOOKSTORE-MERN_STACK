@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Info</title>
+    <style>
+      * {
+        font-family: Calibri, "Trebuchet MS", sans-serif;
+        font-weight: 800;
+        font-size: large;
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 150px;
+        box-sizing: border-box;
+      }
+
+      .card {
+        width: 600px;
+        border: 1px solid #a2a0a0;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      .book-info {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .btn {
+        margin-top: 20px;
+        color: white;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/books">
+      <button>Back to Home</button>
+    </a>
+    <div class="card-container">
+      <div class="card">
+        <div class="book-info">Title: <%= book.title %></div>
+        <div class="book-info">Author: <%= book.author %></div>
+        <div class="book-info">Published: <%= book.publishYear %></div>
+        <div class="book-info">
+          Description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Soluta debitis aut rerum veritatis officiis ea amet nulla id
+          blanditiis tenetur. Tenetur omnis temporibus nulla nemo ipsum ex vero
+          nihil recusandae? Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Itaque, totam nihil atque rem aliquam sunt perferendis mollitia
+          maxime distinctio perspiciatis quod earum soluta voluptatibus
+          praesentium odio illum ratione quaerat corrupti?
+        </div>
+        <a href="/books"><button class="btn">Go Back</button></a>
+      </div>
+    </div>
+  </body>
+</html>
